@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Country } from '../../interfaces/country';
+import { CountryI } from '../../interfaces/country';
 import { CountriesService } from '../../services/countries.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { CountriesService } from '../../services/countries.service';
   styles: ``
 })
 export class ByRegionPageComponent {
-  public countries: Country[] = [];
+  public countries: CountryI[] = [];
 
   constructor(private CountriesService: CountriesService){
 

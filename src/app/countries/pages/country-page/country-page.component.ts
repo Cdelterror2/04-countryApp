@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../../services/countries.service';
 import { switchMap } from 'rxjs';
-import { Country } from '../../interfaces/country';
+import { CountryI } from '../../interfaces/country';
 
 @Component({
   selector: 'app-country-page',
@@ -11,13 +11,12 @@ import { Country } from '../../interfaces/country';
 })
 export class CountryPageComponent implements OnInit{
 
-  public country? : Country;
+  public country? : CountryI;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router : Router,
     private countriesService: CountriesService,
-    //primero va un nombre x y después el del servicio o ?
   ){ }
 
   ngOnInit(): void {
@@ -33,6 +32,7 @@ export class CountryPageComponent implements OnInit{
       return this.country = country;
       });
   }
+
 
   // ngOnInit(): void {
   //   this.activatedRoute.params.subscribe(
